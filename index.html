@@ -25,6 +25,19 @@
         <link rel="manifest" href="assets/favicon/site.webmanifest" />
         <!-- font -->
         <link rel="stylesheet" href="assets/fonts/stylesheet.css" />
+        <!-- css -->
+        <link rel="stylesheet" href="./assets/css/main.css" />
+        <!-- javascript -->
+        <script src="./assets/js/scripts.js"></script>
     </head>
-    <body></body>
+    <body>
+        <header id="header"></header>
+        <script>
+            load("#header", "./template/header.html");
+        </script>
+        <footer id="footer">Home page</footer>
+        <script>
+            load("#footer", "./template/footer.html");
+        </script>
+    </body>
 </html>
