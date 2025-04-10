@@ -138,6 +138,12 @@ table {
   box-sizing: border-box;
 }
 
+:root {
+  --text-color: #1a162e;
+  --icon-color: brightness(0) saturate(100%) invert(9%) sepia(49%)
+      saturate(648%) hue-rotate(210deg) brightness(94%) contrast(100%);
+}
+
 html {
   font-size: 62.5%;
 }
@@ -145,6 +151,7 @@ html {
 body {
   font-size: 1.6rem;
   font-family: Gordita, sans-serif;
+  color: var(--text-color);
 }
 
 a {
@@ -156,6 +163,18 @@ button {
   border: none;
   outline: none;
   background-color: transparent;
+}
+
+button,
+select,
+input,
+textarea {
+  font-family: inherit;
+  color: inherit;
+}
+
+.icon {
+  filter: var(--icon-color);
 }
 
 .row > *, .container-fluid, .container {
@@ -1189,24 +1208,20 @@ button {
     --grid-gutter-y: 90px;
   }
 }
+.top-act__btn, .top-act__group, .top-act, .navbar__list, .top-bar {
+  display: flex;
+  align-items: center;
+}
+
 .header {
   background-color: #eeeeee;
   padding-top: 30px;
   padding-bottom: 30px;
 }
 
-.top-bar {
-  display: flex;
-  align-items: center;
-}
-
 .navbar {
   margin-left: 129px;
   margin-right: auto;
-}
-.navbar__list {
-  display: flex;
-  align-items: center;
 }
 .navbar__item {
   display: flex;
@@ -1222,13 +1237,9 @@ button {
 }
 
 .top-act {
-  display: flex;
-  align-items: center;
   gap: 20px;
 }
 .top-act__group {
-  display: flex;
-  align-items: center;
   min-width: 50px;
   height: 50px;
   border-radius: 8px;
@@ -1237,8 +1248,6 @@ button {
 }
 .top-act__btn {
   padding: 13px 20px;
-  display: flex;
-  align-items: center;
   gap: 10px;
 }
 .top-act__btn--small {
@@ -1262,7 +1271,6 @@ button {
   background: #ededf6;
 }
 .top-act__title {
-  color: #1a162e;
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 146.667%;
@@ -1278,7 +1286,6 @@ button {
   height: 32px;
 }
 .logo__title {
-  color: #1a162e;
   font-size: 2.2rem;
   font-style: normal;
   font-weight: 700;

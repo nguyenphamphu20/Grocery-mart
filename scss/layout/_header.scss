@@ -1,3 +1,8 @@
+%flexItemsCenter {
+    display: flex;
+    align-items: center;
+}
+
 .header {
     background-color: #eeeeee;
     padding-top: 30px;
@@ -5,8 +10,7 @@
 }
 
 .top-bar {
-    display: flex;
-    align-items: center;
+    @extend %flexItemsCenter;
 }
 
 .navbar {
@@ -14,8 +18,7 @@
     margin-right: auto;
 
     &__list {
-        display: flex;
-        align-items: center;
+        @extend %flexItemsCenter;
     }
 
     &__item {
@@ -35,13 +38,11 @@
 }
 
 .top-act {
-    display: flex;
-    align-items: center;
+    @extend %flexItemsCenter;
     gap: 20px;
 
     &__group {
-        display: flex;
-        align-items: center;
+        @extend %flexItemsCenter;
         min-width: 50px;
         height: 50px;
         border-radius: 8px;
@@ -50,9 +51,8 @@
     }
 
     &__btn {
+        @extend %flexItemsCenter;
         padding: 13px 20px;
-        display: flex;
-        align-items: center;
         gap: 10px;
     }
 
@@ -81,8 +81,6 @@
     }
 
     &__title {
-        color: #1a162e;
-
         font-size: 1.5rem;
         font-weight: 500;
         line-height: 146.667%;
