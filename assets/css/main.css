@@ -140,6 +140,7 @@ table {
 
 html {
   font-size: 62.5%;
+  background-color: var(--body-bg-color);
 }
 
 body {
@@ -1206,25 +1207,32 @@ html.dark {
   --text-color: #fff;
   --icon-color: brightness(0) saturate(100%) invert(100%) sepia(6%)
       saturate(25%) hue-rotate(166deg) brightness(107%) contrast(103%);
+  --body-bg-color: #292e39;
   --header-bg-color: #171c28;
   --top-act-group-bg-color: #292e39;
   --top-act-group-shadow: rgba(0, 0, 0, 0.2);
   --top-act-group-separate: #ededf6;
 }
 
+.top-bar, .navbar__list, .top-act, .top-act__group, .top-act__btn {
+  display: flex;
+  align-items: center;
+}
+
 html {
   --text-color: #1a162e;
   --icon-color: brightness(0) saturate(100%) invert(9%) sepia(49%)
       saturate(648%) hue-rotate(210deg) brightness(94%) contrast(100%);
+  --body-bg-color: #f6f6f6;
   --header-bg-color: #eeeeee;
   --top-act-group-bg-color: #fff;
   --top-act-group-shadow: rgba(237, 237, 246, 0.2);
   --top-act-group-separate: #ededf6;
 }
-
-.top-bar, .navbar__list, .top-act, .top-act__group, .top-act__btn {
-  display: flex;
-  align-items: center;
+@media screen and (max-width: 991.98px) {
+  html {
+    --header-bg-color: #fff;
+  }
 }
 
 .header {
