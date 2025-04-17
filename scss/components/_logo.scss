@@ -1,3 +1,4 @@
+@use "../abstracts";
 .logo {
     display: flex;
     align-items: center;
@@ -6,6 +7,11 @@
     &__img {
         width: 32px;
         height: 32px;
+
+        @include abstracts.breakpoint(sm) {
+            height: 24px;
+            width: 24px;
+        }
     }
 
     &__title {
@@ -13,5 +19,9 @@
         font-style: normal;
         font-weight: 700;
         line-height: 145.455%;
+
+        @include abstracts.breakpoint(sm) {
+            font-size: 1.8rem;
+        }
     }
 }
