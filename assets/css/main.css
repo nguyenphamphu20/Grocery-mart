@@ -1212,11 +1212,24 @@ html.dark {
   --top-act-group-bg-color: #292e39;
   --top-act-group-shadow: rgba(0, 0, 0, 0.2);
   --top-act-group-separate: #ededf6;
+  --background-inner-color: #292e39;
+  --shadow--inner-color: rgba(23, 28, 40, 0.4);
 }
 
-.top-bar, .navbar__list, .top-act, .top-act__group, .top-act__btn {
+.top-bar, .navbar__list, .navbar__link, .top-act, .top-act__group, .top-act__btn {
   display: flex;
   align-items: center;
+}
+
+.drop-down {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.3s ease, opacity 0.3s ease;
+}
+
+.navbar__item:hover .drop-down {
+  visibility: visible;
+  opacity: 1;
 }
 
 html {
@@ -1228,6 +1241,8 @@ html {
   --top-act-group-bg-color: #fff;
   --top-act-group-shadow: rgba(237, 237, 246, 0.2);
   --top-act-group-separate: #ededf6;
+  --background-inner-color: #fff;
+  --shadow--inner-color: rgba(200, 200, 200, 0.4);
 }
 @media screen and (max-width: 991.98px) {
   html {
@@ -1241,6 +1256,9 @@ html {
   padding-bottom: 30px;
 }
 
+.top-bar {
+  position: relative;
+}
 @media screen and (max-width: 991.98px) {
   .top-bar {
     justify-content: space-between;
@@ -1258,7 +1276,7 @@ html {
 }
 
 .navbar {
-  margin-left: 129px;
+  margin-left: 144px;
   margin-right: auto;
 }
 @media screen and (max-width: 1199.98px) {
@@ -1271,16 +1289,21 @@ html {
     display: none;
   }
 }
-.navbar__item {
-  display: flex;
-  gap: 6px;
-}
 .navbar__link {
-  padding: 13px 15px;
+  gap: 6px;
+  height: 50px;
+  padding-left: 15px;
+  padding-right: 15px;
   font-size: 1.5rem;
   font-style: normal;
   font-weight: 500;
   line-height: 146.667%;
+}
+.navbar__item:first-child .navbar__link {
+  padding-left: 0;
+}
+.navbar__item:last-child .navbar__link {
+  padding-right: 0;
 }
 
 .top-act {
@@ -1353,6 +1376,24 @@ html {
   .logo__title {
     font-size: 1.8rem;
   }
+}
+
+.drop-down {
+  position: absolute;
+  left: 0;
+  padding-top: 54px;
+}
+.drop-down__icon {
+  position: absolute;
+  top: 42px;
+  left: var(--arrow-left-pos);
+  transform: translateX(-50%);
+}
+.drop-down__inner {
+  border-radius: 20px;
+  background: var(--background-inner-color);
+  box-shadow: 0px 40px 90px 20px var(--shadow--inner-color);
+  padding: 30px;
 }
 
 /*# sourceMappingURL=main.css.map */

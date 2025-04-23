@@ -8,6 +8,7 @@
 
 .top-bar {
     @extend %flexItemsCenter;
+    position: relative;
 
     @include abstracts.breakpoint(lg) {
         justify-content: space-between;
@@ -25,7 +26,7 @@
 }
 
 .navbar {
-    margin-left: 129px;
+    margin-left: 144px;
     margin-right: auto;
 
     @include abstracts.breakpoint(xl) {
@@ -40,18 +41,29 @@
         @extend %flexItemsCenter;
     }
 
-    &__item {
-        display: flex;
-        gap: 6px;
-    }
-
     &__link {
-        padding: 13px 15px;
+        @extend %flexItemsCenter;
+        gap: 6px;
+        height: 50px;
+        padding-left: 15px;
+        padding-right: 15px;
 
         font-size: 1.5rem;
         font-style: normal;
         font-weight: 500;
         line-height: 146.667%;
+    }
+
+    &__item:hover .drop-down {
+        @extend %effectShow;
+    }
+
+    &__item:first-child &__link {
+        padding-left: 0;
+    }
+
+    &__item:last-child &__link {
+        padding-right: 0;
     }
 }
 

@@ -2,3 +2,14 @@
     display: flex;
     align-items: center;
 }
+
+%effectHidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s ease, opacity 0.3s ease;
+}
+
+%effectShow {
+    visibility: visible;
+    opacity: 1;
+}
